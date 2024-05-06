@@ -19,6 +19,7 @@
           gotools
           golangci-lint
           cobra-cli
+          sqlite
         ];
       };
     }

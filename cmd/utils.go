@@ -3,6 +3,8 @@ package cmd
 import (
 	"os"
 	"path/filepath"
+
+	"github.com/karstenpedersen/sheet/db"
 )
 
 func getDataDir() (string, error) {
@@ -23,5 +25,12 @@ func createDataDir() error {
 	if err != nil {
 		return err
 	}
+
+	dbPath := filepath.Join(dataDir, "sheet.db")
+	err = db.InitDatabase(dbPath)
+	if err != nil {
+		return err
+	}
+
 	return nil
 }

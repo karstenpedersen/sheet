@@ -13,7 +13,7 @@ var initCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		err := createDataDir()
 		if err != nil {
-			fmt.Println("Error initializing sheet")
+			fmt.Println("Error initializing sheet", err)
 		}
 		fmt.Println("Initialized sheet")
 	},
